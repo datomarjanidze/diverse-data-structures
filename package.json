@@ -1,9 +1,10 @@
 {
   "name": "diverse-data-structures",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "src/index.js",
   "keywords": [],
   "author": "Dato Marjanidze <datomarjanidze10@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "https://github.com/datomarjanidze/diverse-data-structures"
 }
