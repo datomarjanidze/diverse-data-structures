@@ -76,6 +76,8 @@ stack.pop()
   </tbody>
 </table>
 
+<br>
+
 ### `ExtendedStack` class
 <table>
   <thead>
