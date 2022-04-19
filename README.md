@@ -55,6 +55,8 @@ stack.pop()
   </tbody>
 </table>
 
+<br>
+
 <table>
   <thead>
     <tr>
