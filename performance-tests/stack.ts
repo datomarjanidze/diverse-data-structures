@@ -1,16 +1,16 @@
-const { Stack } = require('../src')
-const { memoryUsage } = require('process')
+import { Stack } from '../src'
+import { memoryUsage } from 'process'
 
 const maxSize = 40e6
-const stackOne = new Stack(maxSize, Array)
-const stackTwo = new Stack(maxSize, Uint8Array)
-const usedMemoryInMb = []
+const stackOne = new Stack(maxSize, new Array<any>())
+const stackTwo = new Stack(maxSize, new Uint8Array())
+const usedMemoryInMb: number[] = []
 
-function getUsedMemory() /*: number */ {
+function getUsedMemory(): number {
   return memoryUsage().rss / 1e6
 }
 
-function printUsedMemory(index /*: number */) /*: number */ {
+function printUsedMemory(index: number): void {
   console.log(`${index}: Used memory: ${usedMemoryInMb[index]} MB`)
 }
 

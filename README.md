@@ -1,18 +1,48 @@
-# Diverse data structures
+## Diverse data structures
 
-![language](https://img.shields.io/badge/language-JavaScript-yellow.svg)
-![license](https://img.shields.io/badge/license-ISC-green)
-[![npm version](https://img.shields.io/npm/v/diverse-data-structures.svg?style=flat)](https://npmjs.org/package/diverse-data-structures)
-[![npm download](https://img.shields.io/npm/dt/diverse-data-structures.svg)](https://npmjs.org/package/diverse-data-structures)
+<p align="center">
+  <a href="https://www.npmjs.com/package/decimal-subtract" target="_blank"><img src="https://img.shields.io/npm/v/decimal-subtract.svg" alt="NPM Version" /></a>
+  <a href="https://www.npmjs.com/package/decimal-subtract" target="_blank"><img src="https://img.shields.io/npm/l/decimal-subtract.svg" alt="Package License" /></a>
+  <a href="https://www.npmjs.com/package/decimal-subtract" target="_blank"><img src="https://img.shields.io/npm/dm/decimal-subtract.svg" alt="NPM Downloads" /></a>
+</p>
+
+### Table of contents
+
+- [Description](#Description)
+- [Installation](#Installation)
+- [Usage example](#Usage-example)
+- [API](#API)
+  - [Stack](#Stack)
+
+### Description
+
+Provides diverse data structures implementations.
 
 ## Installation
+
+For the usage in CJS or ESM run the following command:
+
 ```console
 npm i diverse-data-structures
 ```
 
-## Example usage
-```javascript
-const { Stack } = require('diverse-data-structures')
+For script tag usage include the following script:
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/diverse-data-structures@1.1.0/dist/diverse-data-structures.min.js"></script>
+  </body>
+</html>
+```
+
+### Usage example
+
+ESM:
+
+```ts
+import { Stack } from 'diverse-data-structures'
 const stack = new Stack(10, Int8Array)
 
 stack.push(45)
@@ -21,86 +51,94 @@ stack.push(100)
 stack.pop()
 ```
 
-## Table of contents
-- [Stack](#stack)
+Classic:
 
-## Stack
+```ts
+const { Stack } = window.diverseDataStructures
+const stack = new Stack(10, Int8Array)
 
-### `Stack` class
-<table>
-  <thead>
-    <tr>
-      <th>Constructor Param</th>
-      <th>Description</th>
-      <th>Default value</th>
-      <th>Possible values</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>maxSize</td>
-      <td>Max size of stack items</td>
-      <td>undefined</td>
-      <td>> 0</td>
-    </tr>
-    <tr>
-      <td>array</td>
-      <td>Array class for optimizing performance and memory usage</td>
-      <td>Array</td>
-      <td>
-        Array, Int8Array, Int16Array, Int32Array, Uint8Array, Uint16Array,
-        Uint32Array, Float32Array, Float64Array, BigInt64Array, BigUint64Array
-      </td>
-    </tr>
-  </tbody>
-</table>
+stack.push(45)
+stack.push(44)
+stack.push(100)
+stack.pop()
+```
 
-<br>
+### API
 
-<table>
-  <thead>
-    <tr>
-      <th>Class Method</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>push</td>
-      <td>Pushes an item at the top of the stack</td>
-    </tr>
-    <tr>
-      <td>pop</td>
-      <td>Removes most recently added item from the stack</td>
-    </tr>
-  </tbody>
-</table>
+#### `class Stack<T>`
 
-<br>
+- Models
+  - `ArrayType<T>`
+    ```ts
+    type ArrayType<T> =
+      | (new (args: any) => Array<T>)
+      | (new (args: any) => Int8Array)
+      | (new (args: any) => Int16Array)
+      | (new (args: any) => Int32Array)
+      | (new (args: any) => Uint8Array)
+      | (new (args: any) => Uint16Array)
+      | (new (args: any) => Uint32Array)
+      | (new (args: any) => Float32Array)
+      | (new (args: any) => Float64Array)
+      | (new (args: any) => BigInt64Array)
+      | (new (args: any) => BigUint64Array)
+    ```
+- Constructor parameters
+  - maxSize `number` stack size
+  - array `Array` container where the stack will store its items. It
+    supports typed arrays for the memory usage optimization
+    **Default**: `new Array(maxSize)`
+- Properties
+  - maxSize `number` stack size
+  - items `ArrayType<T>` container where the stack will store its items
+  - top `number` is used to access the element at the top
+- Methods
+  - push(item)
+    - item `any` stack item
+    - Returns: `boolean`
+    - Description: if stack is overflowed, it will return `false`, else
+      it will return `true`
+  - pop()
+    - Returns: `boolean`
+    - Description: if stack is underflowed, it will return `false`, else
+      it will return the stack item
 
-### `ExtendedStack` class
-<table>
-  <thead>
-    <tr>
-      <th>Class Method</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>peek</td>
-      <td>
-        Returns most recently added item from the stack, without removing it
-        from the stack
-      </td>
-    </tr>
-    <tr>
-      <td>duplicate</td>
-      <td>Picks top item and pushes its duplicate at the top of the stack</td>
-    </tr>
-    <tr>
-      <td>swap</td>
-      <td>Swaps the places of two upper items</td>
-    </tr>
-  </tbody>
-</table>
+#### `class ExtendedStack<T>`
+
+- Models
+  - `ArrayType<T>`
+    ```ts
+    type ArrayType<T> =
+      | (new (args: any) => Array<T>)
+      | (new (args: any) => Int8Array)
+      | (new (args: any) => Int16Array)
+      | (new (args: any) => Int32Array)
+      | (new (args: any) => Uint8Array)
+      | (new (args: any) => Uint16Array)
+      | (new (args: any) => Uint32Array)
+      | (new (args: any) => Float32Array)
+      | (new (args: any) => Float64Array)
+      | (new (args: any) => BigInt64Array)
+      | (new (args: any) => BigUint64Array)
+    ```
+- Constructor parameters
+  - maxSize `number` stack size
+  - array `Array` container where the stack will store its items. It
+    supports typed arrays for the memory usage optimization
+    **Default**: `new Array(maxSize)`
+- Properties
+  - maxSize `number` stack size
+  - items `ArrayType<T>` container where the stack will store its items
+  - top `number` is used to access the element at the top
+- Methods
+  - peek()
+    - Returns: `any`
+    - Description: Returns most recently added item from the stack,
+      without removing it from the stack
+  - duplicate()
+    - Returns: `boolean`
+    - Description: Picks top item and pushes its duplicate at the top of
+      the stack
+  - swap()
+    - Returns: `boolean`
+    - Description: Swaps the places of two upper items
