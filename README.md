@@ -1,4 +1,4 @@
-## Diverse Data Structures v1.1.1 Documentation
+## Diverse Data Structures v1.1.2 Documentation
 
 <p align="center">
   <a href="https://www.npmjs.com/package/decimal-subtract" target="_blank"><img src="https://img.shields.io/npm/v/decimal-subtract.svg" alt="NPM Version" /></a>
@@ -12,8 +12,8 @@
 - [Installation](#Installation)
 - [Usage example](#Usage-example)
 - [API](#API)
-  - [class Stack<T>](#class-Stack<T>)
-  - [class ExtendedStack<T>](#class-ExtendedStack<T>)
+  - [class Stack<T>](#class-Stack)
+  - [class ExtendedStack<T>](#class-ExtendedStack)
 
 ### Description
 
@@ -33,7 +33,7 @@ For script tag usage include the following script:
 <!DOCTYPE html>
 <html>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/diverse-data-structures@1.1.1/dist/diverse-data-structures.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/diverse-data-structures@1.1.2/dist/diverse-data-structures.min.js"></script>
   </body>
 </html>
 ```
@@ -66,7 +66,7 @@ stack.pop()
 
 ### API
 
-#### `class Stack<T>`
+#### `class Stack`
 
 - Models
   - `ArrayType<T>`
@@ -104,7 +104,7 @@ stack.pop()
     - Description: if stack is underflowed, it will return `false`, else
       it will return the stack item
 
-#### `class ExtendedStack<T>`
+#### `class ExtendedStack`
 
 - Models
   - `ArrayType<T>`
