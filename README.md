@@ -1,4 +1,4 @@
-## Diverse data structures
+## Diverse Data Structures v1.1.1 Documentation
 
 <p align="center">
   <a href="https://www.npmjs.com/package/decimal-subtract" target="_blank"><img src="https://img.shields.io/npm/v/decimal-subtract.svg" alt="NPM Version" /></a>
@@ -12,7 +12,8 @@
 - [Installation](#Installation)
 - [Usage example](#Usage-example)
 - [API](#API)
-  - [Stack](#Stack)
+  - [class Stack<T>](#class-Stack<T>)
+  - [class ExtendedStack<T>](#class-ExtendedStack<T>)
 
 ### Description
 
@@ -32,7 +33,7 @@ For script tag usage include the following script:
 <!DOCTYPE html>
 <html>
   <body>
-    <script src="https://cdn.jsdelivr.net/npm/diverse-data-structures@1.1.0/dist/diverse-data-structures.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/diverse-data-structures@1.1.1/dist/diverse-data-structures.min.js"></script>
   </body>
 </html>
 ```
