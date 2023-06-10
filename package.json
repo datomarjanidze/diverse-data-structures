@@ -1,6 +1,6 @@
 {
   "name": "diverse-data-structures",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Diverse data structures.",
   "main": "dist/diverse-data-structures.cjs.js",
   "module": "dist/diverse-data-structures.esm.js",
